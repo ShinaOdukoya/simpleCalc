@@ -3,7 +3,7 @@ It accept 3 input from user;
 first and last input are type int while second input is the operator
 Note exponential is denoted by double **
 */
-import java.text.BreakIterator;
+
 import java.util.Scanner;
 
 public class SimpleCalculator{
@@ -25,25 +25,29 @@ public class SimpleCalculator{
         int number2 = input.nextInt();
 
         //variable int is declared as global so as to be used in the for loop
-        int answer =1;
+        int answer = 1;
 
+        int temp;
         
         //A condition statement to test for + "addition"
         if (operator.equals("+")){
             int answer1 = number1 + number2;
             System.out.println(number1 + " + " + number2 + " = " + answer1);
+        }
 
         //A condition statement to test for - "subtraction"
-        }else if (operator.equals("-")){
+        else if (operator.equals("-")){
             int answer2 = number1 - number2;
             System.out.println(number1 + " - " + number2 + " = " + answer2 );
+        }
 
         //A condition statement to test for * "multiplication"
-        }else if (operator.equals("*")){
+        else if (operator.equals("*")){
             System.out.println(number1 + " * " + number2 + " = " + number1 * number2);
+        }
 
         //A condition statement to test for / "division"
-        }else if (operator.equals("/")){
+        else if (operator.equals("/")){
             System.out.println(number1 + " / " + number2 + " = " + number1 / number2);
 
         //A condition statement to test for % "modulus operator"
@@ -52,18 +56,31 @@ public class SimpleCalculator{
 
         //Test for exponential
         }else if (operator.equals("**")){
-
+            int x =0;
+            int i;
         //For loop to loop through second input entered by the user which is assumed to be the exponent
-            for (int i = number2; i<=number2; i++){
+            for ( i = 1; i<=number2; i++){
 
             //condition statement to check that number is greater than 0, hence the for loop is executed
-                if(number2 > 0){
-                    answer = number1 * number2;
+                //if(number2 != 0){
+                   //while (number2 != 0){
+
+                  // }
+                  //number1 is stored in temp variable immediately loop begins
+                  temp = number1;
+
+                  //then variable answer is multiplied by temp throughout the loop
+                  answer = answer * temp;
+                   
                 }
+                   
+                //print variable answer
+                System.out.println(number1 + " ** " + number2 + " = " + answer);
+               
             }
             
             
-            System.out.println(number1 + " ** " + number2 + " = " + answer);
-        }
+            
+        
     }
 }
